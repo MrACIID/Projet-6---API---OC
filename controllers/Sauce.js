@@ -1,13 +1,20 @@
 const Sauce = require('../models/Sauce');
 
 exports.createSauce = (req, res, next) => {
-  delete req.body._id;
+  const sauceObject = JSON.parse(req.body.sauce);
+  delete sauceObject._id;
   const sauce = new Sauce({
-    ...req.body
-  });
+      ...sauceObject,
+      userId: req.auth.userId,
+      imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`,
+      likes: 0,
+      dislikes: 0,
+      usersLiked: [],
+      usersDisliked: [],
+  })
   sauce.save()
-  .then(() => res.status(201).json({message: 'Objet enregistré'}))
-  .catch(error => res.status(400).json({error}));
+  .then(() => { res.status(201).json({message: 'Objet enregistré !'})})
+  .catch(error => { res.status(400).json( { error })})
 };
 
 exports.getOneSauce = (req, res, next) => {
@@ -33,3 +40,4 @@ exports.getAllSauce = (req, res, next) => {
     .then(sauces => res.status(200).json(sauces))
     .catch(error => res.status(400).json({error}));
   };
+
