@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const uniqueValidator = require('mongoose-unique-validator');
 
-
+// création schema objet user a envoyer a la base de données mongodb
 
 
 const userSchema = mongoose.Schema({

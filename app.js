@@ -1,3 +1,4 @@
+// importation express,mongooose et des routes 
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
@@ -6,6 +7,7 @@ const userRoutes = require('./routes/user');
 
 const app = express();
 
+// connection base de donnée mongodb
 mongoose.connect('mongodb+srv://aciid:8cEgLkcMWiIFzlwG@cluster0.pmhcrcq.mongodb.net/?retryWrites=true&w=majority',
 
   { useNewUrlParser: true,
@@ -14,7 +16,7 @@ mongoose.connect('mongodb+srv://aciid:8cEgLkcMWiIFzlwG@cluster0.pmhcrcq.mongodb.
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 app.use(express.json()); 
 
-
+// headers d'accès depuis n'importe quelle origine, envois des requêtes avec get, post,ect.
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');

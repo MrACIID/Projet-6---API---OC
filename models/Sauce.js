@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+// création schema objet sauce a envoyer a la base de données mongodb
+
 const sauceSchema = mongoose.Schema({
     
       userId: { type: String, required: true},

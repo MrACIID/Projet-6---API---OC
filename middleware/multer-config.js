@@ -1,5 +1,7 @@
 const multer = require('multer');
 
+// gestion d'images a l'aide de multer 
+
 const MIME_TYPES = {
     'image/jpg': 'jpg',
     'image/jpeg': 'jpg',
