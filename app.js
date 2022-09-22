@@ -1,6 +1,5 @@
-// importation express,mongooose et des routes 
+// importation express, et des routes 
 const express = require('express');
-const mongoose = require('mongoose');
 const path = require('path');
 const sauceRoutes = require('./routes/Sauce');
 const userRoutes = require('./routes/user');
@@ -8,12 +7,9 @@ const userRoutes = require('./routes/user');
 const app = express();
 
 // connection base de donnée mongodb
-mongoose.connect('mongodb+srv://aciid:8cEgLkcMWiIFzlwG@cluster0.pmhcrcq.mongodb.net/?retryWrites=true&w=majority',
 
-  { useNewUrlParser: true,
-    useUnifiedTopology: true })
-  .then(() => console.log('Connexion à MongoDB réussie !'))
-  .catch(() => console.log('Connexion à MongoDB échouée !'));
+const mongoose = require('./MongoDBConnect/MongoDBConnect');
+
 app.use(express.json()); 
 
 // headers d'accès depuis n'importe quelle origine, envois des requêtes avec get, post,ect.
