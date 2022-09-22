@@ -2,6 +2,8 @@ Projet 6 de la Formation Web dev d'Openclassrooms
 
 Construisez une API sécurisée pour une application d'avis gastronomiques
 
+- Installez Express,Mongoose,Multer et jsonwebtoken
+
 Afin de connecter l'api a la base de donnée MongoDB consulter le readme dans le dossier MongoDBConnect
 
 
