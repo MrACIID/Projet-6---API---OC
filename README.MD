@@ -4,7 +4,7 @@ Construisez une API sécurisée pour une application d'avis gastronomiques
 
 - Utilisation d'Express, Mongoose, Multer, BCrypt, jsonwebtoken et Nodemon.
 
-Afin de connecter l'api a la base de donnée MongoDB consulter le readme dans le dossier MongoDBConnect
+Afin de connecter l'api a la base de données MongoDB consulter le readme dans le dossier MongoDBConnect
 
 
 
