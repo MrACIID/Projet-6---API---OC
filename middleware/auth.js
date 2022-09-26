@@ -1,6 +1,7 @@
+//importation jwt
 const jwt = require('jsonwebtoken');
 
-///middleware d'authorisation a l'aide de jsonwebtoken
+///middleware d'autorisation a l'aide de jsonwebtoken (verifie la validité du token de l'utilisateur)
 
 module.exports = (req, res, next) => {
     try {

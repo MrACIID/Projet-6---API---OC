@@ -1,6 +1,7 @@
+//Importation multer(gestion de fichier)
 const multer = require('multer');
 
-// gestion d'images a l'aide de multer 
+//Gestion d'images a l'aide de multer 
 
 const MIME_TYPES = {
     'image/jpg': 'jpg',
@@ -20,4 +21,6 @@ filename: (req, file, callback) => {
 
 });
 
+
+//Exportation du module
 module.exports = multer({storage: storage}).single('image');

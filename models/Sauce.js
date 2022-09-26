@@ -1,6 +1,7 @@
+//Importation mongoose
 const mongoose = require('mongoose');
 
-// création schema objet sauce a envoyer a la base de données mongodb
+//Création schema objet sauce a envoyer a la base de données mongodb
 
 const sauceSchema = mongoose.Schema({
     
@@ -17,4 +18,6 @@ const sauceSchema = mongoose.Schema({
       usersDisliked: { type: [String] },
 });
 
+
+//Exportation module pour l'utiliser dans un fichier exterieur
 module.exports = mongoose.model('Sauce', sauceSchema);

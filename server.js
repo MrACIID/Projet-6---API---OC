@@ -1,4 +1,7 @@
+//Importation Node.js pour créer un serveur.
 const http = require('http');
+
+//Importation application app.js.
 const app = require('./app');
 
 const normalizePort = val => {
@@ -35,6 +38,8 @@ const errorHandler = error => {
   }
 };
 
+
+//Création du serveur avec app.js pour argument.
 const server = http.createServer(app);
 
 server.on('error', errorHandler);
