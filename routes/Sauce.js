@@ -12,7 +12,7 @@ const sauceCtrl = require('../controllers/Sauce')
 router.post('/', auth, multer, sauceCtrl.createSauce);
 
 //Route modification d'une sauce
-router.put('/:id', auth, sauceCtrl.modifySauce);
+router.put('/:id', auth, multer, sauceCtrl.modifySauce);
 
 //Route suppression d'une sauce
 router.delete('/:id', auth, sauceCtrl.deleteSauce);
