@@ -1,7 +1,7 @@
 //Importations bcrypt(hashage mot de passe), jwt et models User.js de la base de donnée
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+const User = require('../models/user');
 
 //Logique fonction signup, et exportation de celle ci
 exports.signup = (req, res, next) => {
