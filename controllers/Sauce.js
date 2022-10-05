@@ -42,7 +42,6 @@ exports.modifySauce = (req, res, next) => {
     imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
 } : { ...req.body };
 
-delete sauceObject._userId;
 Sauce.findOne({_id: req.params.id})
     .then((sauce) => {
         if (sauce.userId != req.auth.userId) {
@@ -74,7 +73,7 @@ exports.deleteSauce = (req, res, next) => {
            }
        })
        .catch( error => {
-           res.status(500).json({ error });
+           res.status(400).json({ error });
        });
 };
 
